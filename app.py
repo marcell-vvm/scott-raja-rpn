@@ -1,14 +1,16 @@
 import streamlit as st
+from streamlit_autorefresh import st_autorefresh
 import pandas as pd
 from databricks import sql
 import time 
 
 # Set up connection parameters (use secrets or env vars in production!)
-server_hostname = ''
-http_path = ''
-access_token = ''
+server_hostname = 'dbc-1a1b8180-343f.cloud.databricks.com'
+http_path = '/sql/1.0/warehouses/0f4f8095202a4ce0'
+access_token = 'dapi61406d06a3f3c38a7cf0f0a5a850ac73'
 
 st.title("scott raja rankings hehe")
+st_autorefresh(interval=60 * 1000, key='datarefresh')
 
 try:
     with sql.connect(
