@@ -30,4 +30,4 @@ except Exception as e:
     st.error(f"Failed to load data: {e}")
 
 time.sleep(60)
-st.experimental_rerun()
+st.rerun()
