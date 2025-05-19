@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#1E90FF"       # Dodger Blue for accents
+backgroundColor = "#000000"    # Black background
+secondaryBackgroundColor = "#1A1A1A"  # Dark gray for containers
+textColor = "#FFFFFF"          # White text
+font = "sans serif"
