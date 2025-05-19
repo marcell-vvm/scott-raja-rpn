@@ -4,6 +4,11 @@ import pandas as pd
 from databricks import sql
 import time 
 
+# Set up connection parameters (use secrets or env vars in production!)
+server_hostname = st.secrets.databricks.server_hostname
+http_path = st.secrets.databricks.http_path
+access_token = st.secrets.databricks.access_token
+
 st.title("Peak Play - Scott Raja Rankings")
 st_autorefresh(interval=60 * 1000, key='datarefresh')
 
