@@ -28,7 +28,7 @@ try:
     st.image('https://peakplay-public-assets.s3.us-east-1.amazonaws.com/peakplay-logos/peakplay-logo-darkmode.svg', width=200)  # adjust path/width as needed
     st.title("TheBigJackpot Rankings")
 
-    st.text_input(
+    filter_input = st.text_input(
         "Enter your ID.. ", 
         key="input_id", 
         max_chars=6,
@@ -36,7 +36,13 @@ try:
         placeholder='ABC-123'
 
     )
-    st.dataframe(df)
+
+    filtered_df = df.copy()
+    if filter_input:
+        filtered_df = df[df['email'].astype(str).str.contains(filter_input)]
+
+    
+    st.dataframe(filtered_df)
     st_autorefresh(interval=30 * 1000, key='datarefresh')
 
     time.sleep(60)
