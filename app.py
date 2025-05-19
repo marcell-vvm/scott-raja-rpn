@@ -22,8 +22,7 @@ try:
 
     df = pd.DataFrame(
         data, 
-        columns=columns,
-        hide_index=True
+        columns=columns
     )
 
     st.image('https://peakplay-public-assets.s3.us-east-1.amazonaws.com/peakplay-logos/peakplay-logo-darkmode.svg', width=200)  # adjust path/width as needed
