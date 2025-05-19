@@ -16,7 +16,7 @@ try:
         access_token=access_token,
     ) as conn:
         with conn.cursor() as cursor:
-            cursor.execute("SELECT * FROM peak_play.silver.scott_raja_rankings_tmp")
+            cursor.execute(st.secrets.databricks.query)
             columns = [desc[0] for desc in cursor.description]
             data = cursor.fetchall()
 
@@ -31,7 +31,7 @@ try:
     filter_input = st.text_input(
         "Enter your ID.. ", 
         key="input_id", 
-        max_chars=6,
+        max_chars=7,
         help="This is the 6 digit number you received from our support team. ",
         placeholder='ABC-123'
 
