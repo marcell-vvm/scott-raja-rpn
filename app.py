@@ -9,7 +9,7 @@ server_hostname = st.secrets.databricks.server_hostname
 http_path = st.secrets.databricks.http_path
 access_token = st.secrets.databricks.access_token
 
-st.image(url='https://peakplay-public-assets.s3.us-east-1.amazonaws.com/peakplay-logos/peakplay-logo-darkmode.svg', width=200)  # adjust path/width as needed
+st.image('https://peakplay-public-assets.s3.us-east-1.amazonaws.com/peakplay-logos/peakplay-logo-darkmode.svg', width=200)  # adjust path/width as needed
 st.title("Peak Play - Scott Raja Rankings")
 st_autorefresh(interval=30 * 1000, key='datarefresh')
 
