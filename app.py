@@ -1,11 +1,12 @@
 import streamlit as st
 import pandas as pd
 from databricks import sql
+import time 
 
 # Set up connection parameters (use secrets or env vars in production!)
-server_hostname = 'dbc-1a1b8180-343f.cloud.databricks.com'
-http_path = '/sql/1.0/warehouses/0f4f8095202a4ce0'
-access_token = 'dapi61406d06a3f3c38a7cf0f0a5a850ac73'
+server_hostname = ''
+http_path = ''
+access_token = ''
 
 st.title("scott raja rankings hehe")
 
@@ -25,3 +26,6 @@ try:
 
 except Exception as e:
     st.error(f"Failed to load data: {e}")
+
+time.sleep(60)
+st.experimental_rerun()
